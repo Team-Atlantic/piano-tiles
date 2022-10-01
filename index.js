@@ -1,8 +1,7 @@
 `use scrict`;
 document.addEventListener("DOMContentLoaded", function () {
   let score=0;
-  let activeTile = generateRandomNum();
-
+  
   const gameTime = 2000;
  
   const keyMap = { 0: "A", 1: "S", 2: "D", 3: "F" };
@@ -18,6 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
       para.addEventListener('click',CheckBgcolor);
       if(i===ranNo){
         para.style.background="black"
+        para.textContent = keyMap[i];
+       
+        
       }else{
         para.style.background="white"
       }
@@ -35,34 +37,28 @@ function removeChild(sect){
 
 
 function CheckBgcolor(event){
-  // console.log('event',event)
-  console.log(getComputedStyle(event.target).backgroundColor)
-  if(getComputedStyle(event.target).backgroundColor==="rgb(0, 0, 0)"){
-    score+=1
+  let noOfClasses = event.target.classList;
+  let tileColor = getComputedStyle(event.target).backgroundColor;
+  if(tileColor==="rgb(0, 0, 0)" && !(noOfClasses.contains('counted'))){
+    score+=1;
+    // to mark that it should not be counted again.
+    event.target.classList.add('counted');
     console.log('score',score)
-  }else{
+  }
+ 
+
+  else if (tileColor === "rgb(255, 255, 255)"){
     alert("game over!")
   }
 
 }
 
-  function setTile(prev, cur) {
-    let row = document.querySelectorAll(".row");
-    row[prev].style.backgroundColor = "";
-  
-    row[cur].innerText = keyMap[cur];
-    row[cur].style.backgroundColor = "black";
-  }
 
-  function generateBoard() {
-    let randomNum = generateRandomNum();
-    setTile(activeTile, randomNum);
-    activeTile = randomNum;
-  }
+ 
   function generateRandomNum() {
     // generate a random number between 0 to 3
     return ((Math.random() * 10) | 0) % 4;
   }
 
-  // setInterval(generateBoard, gameTime);
+  
 });
