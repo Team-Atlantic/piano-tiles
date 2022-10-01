@@ -1,6 +1,8 @@
-:root {
-  --text-color: #fff;
-  --border-color: #000;
+:root{
+    --text-color:#fff;
+    --border-color:#000;
+    --font-family:"Chewy", cursive;
+
 }
 
 * {
@@ -113,7 +115,69 @@
     font-size: 1rem;
   }
 
+
+.row{
+    height:3rem;
+    width:3rem;
+    border:2px solid var(--border-color);
+    color:var(--text-color);
+    display: inline-block;
+    text-align: center;
+  }
+
+  .rule{
+    background-color: rgb(65, 209, 214);
+    height: 400px;
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.507);
+    border-radius: 10px;
+  }
+
+  .ruleFirstSection{
+    border: 1px solid black;
+    padding: 1px 16px;
+    text-align: center;
+    letter-spacing: 2px;
+    word-spacing: 10px;
+    color: white;
+    height: 20%;
+    font-family: var(--font-family)
+  }
+
+  .ruleClose{
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .ruleFirstSection h2{
+    font-size: 200%;
+    padding: 0;
+    margin: 15px;
+  }
+  .ruleSecondSection{
+    border: 1px solid black;
+    line-height: 1.6;
+    /* border: 1px solid black; */
+    padding: 1px 16px;
+    text-align: center;
+    color: white;
+    font-family: var(--font-family);
+    display: flex;
+    flex-flow: column;
+    height: 80%;
+    justify-content: center;
+    
+  }
+
+
   .score-card-game-mode {
     font-size: 1.8rem;
   }
 }
+
