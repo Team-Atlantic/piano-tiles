@@ -1,0 +1,27 @@
+:root{
+    --text-color:#fff;
+    --border-color:#000;
+}
+
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+.first-row{
+    display: flex;
+    
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.row{
+    height:3rem;
+    width:3rem;
+    border:2px solid var(--border-color);
+    color:var(--text-color);
+    display: inline-block;
+    text-align: center;
+  }
