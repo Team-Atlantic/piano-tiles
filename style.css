@@ -1,27 +1,92 @@
-:root{
-    --text-color:#fff;
-    --border-color:#000;
+:root {
+  --text-color: #fff;
+  --border-color: #000;
 }
 
-*{
-    margin:0px;
-    padding:0px;
-    box-sizing: border-box;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-.first-row{
-    display: flex;
-    
-    justify-content: space-around;
-    align-items: center;
-    
+.first-row {
+  display: flex;
+
+  justify-content: space-around;
+  align-items: center;
 }
 
-.row{
-    height:3rem;
-    width:3rem;
-    border:2px solid var(--border-color);
-    color:var(--text-color);
-    display: inline-block;
-    text-align: center;
-  }
+.row {
+  height: 3rem;
+  width: 3rem;
+  border: 2px solid var(--border-color);
+  color: var(--text-color);
+  display: inline-block;
+  text-align: center;
+}
+
+/* score screen */
+.score-screen {
+  background-color: rgb(65, 209, 214);
+  height: 400px;
+  width: 40%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.507);
+  border-radius: 10px;
+}
+
+.score-card {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.score-card-text {
+  align-self: flex-end;
+  font-size: 1.2rem;
+}
+
+.score-card-game-mode {
+  font-size: 2.5rem;
+}
+
+.score-btn {
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+}
+
+.score {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.score-btn {
+  background-image: linear-gradient(
+    to right,
+    #000000 0%,
+    #434343 51%,
+    #000000 100%
+  );
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+}
+
+.score-btn:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
