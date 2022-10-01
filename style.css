@@ -29,7 +29,7 @@
 .score-screen {
   background-color: rgb(65, 209, 214);
   height: 400px;
-  width: 40%;
+  width: 50%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -37,6 +37,7 @@
   padding: 2rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.507);
   border-radius: 10px;
+  color: var(--text-color);
 }
 
 .score-card {
@@ -88,4 +89,30 @@
   background-position: right center;
   color: #fff;
   text-decoration: none;
+}
+
+/* score screen responsive */
+@media (width < 800px) {
+  .score-screen {
+    width: 80%;
+  }
+}
+
+@media (width < 450px) {
+  .score-button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .score-btn {
+    display: block;
+  }
+  .score-card-text {
+    font-size: 1rem;
+  }
+
+  .score-card-game-mode {
+    font-size: 1.8rem;
+  }
 }
