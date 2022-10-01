@@ -38,6 +38,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.507);
   border-radius: 10px;
   color: var(--text-color);
+  text-align: center;
 }
 
 .score-card {
