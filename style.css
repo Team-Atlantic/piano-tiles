@@ -89,9 +89,18 @@
 }
 
 .row{
+  display: flex;
+ justify-content: center;
+ align-items: center;
   height: 100%;
   border: 2px solid blueviolet;
+  text-align: center;
+  color: white;
 
+}
+.counted{
+  content: '';
+  opacity:0.5;
 }
 
 /* game board end */
