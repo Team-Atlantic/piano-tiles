@@ -35,7 +35,7 @@
   word-spacing: 10px;
   color: white;
   height: 20%;
-  font-family: var(--font-family)
+  font-family: var(--font-family);
 }
 
 .ruleClose{
@@ -76,6 +76,11 @@
   width: 50%;
   margin: 0 auto;
   /* overflow: auto; */
+}
+@media (width<700px){
+  .game-board{
+    width: 90%;
+  }
 }
 
 .board-row{

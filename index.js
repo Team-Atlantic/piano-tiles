@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   let score=0;
   
-  const gameTime = 500;
+  const gameTime = 1000;
  
   const keyMap = { 0: "A", 1: "S", 2: "D", 3: "F" };
   
