@@ -7,30 +7,28 @@ document.addEventListener("DOMContentLoaded", function () {
   const keyMap = { 0: "A", 1: "S", 2: "D", 3: "F" };
   
   const gameBoard = document.querySelector(".game-board");
-  setInterval(function(){
-    let sec=document.createElement("section");
-    let ranNo=generateRandomNum();
-    sec.className="board-row";
-    for(let i=0;i<=3;i++){
-      let para=document.createElement("p");
-      para.className="row";
-      para.addEventListener('click',CheckBgcolor);
-      if(i===ranNo){
-        para.style.background="black"
-        para.textContent = keyMap[i];
-       
-        
-      }else{
-        para.style.background="white"
+  function startGame(){
+    setInterval(function(){
+      let sec=document.createElement("section");
+      let ranNo=generateRandomNum();
+      sec.className="board-row";
+      for(let i=0;i<=3;i++){
+        let para=document.createElement("p");
+        para.className="row";
+        para.addEventListener('click',CheckBgcolor);
+        if(i===ranNo){
+          para.style.background="black"
+          para.textContent = keyMap[i];
+        }else{
+          para.style.background="white"
+        }
+        sec.appendChild(para);
       }
-      sec.appendChild(para);
-    }
-    gameBoard.appendChild(sec);
-    setInterval(removeChild,gameTime*4,sec);
-  },gameTime)
+      gameBoard.appendChild(sec);
+      setInterval(removeChild,gameTime*4,sec);
+    },gameTime)
+  }
 
-
- 
 function removeChild(sect){
   sect.remove();
 }
