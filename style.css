@@ -1,7 +1,7 @@
 :root{
     --text-color:#fff;
     --border-color:#000;
-    --font-family:"Chewy", cursive;
+    /* --font-family:"Chewy", cursive; */
 
 }
 
@@ -54,7 +54,7 @@
   padding: 1px 16px;
   text-align: center;
   color: var(--text-color);
-  font-family: var(--font-family);
+  /* font-family: var(--font-family); */
   display: flex;
   flex-flow: column;
   /* height: 60%; */
@@ -109,7 +109,7 @@ font-size: 1.5em;
 }
 @media (width < 500px){
 .ruleSecondSection p {
-  font-size: 0.8em;
+  font-size: 1em;
 }
 .ruleFirstSection h2{
   font-size: 150%;
