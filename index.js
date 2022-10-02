@@ -6,6 +6,8 @@ import {gameOver,scoreCard} from "./score.js";
  
  export const gameBoard = document.querySelector(".game-board");
  let mygame =null
+
+ // called when we click on start on rules div 
  export function startGame(){
   scoreCard();
   mygame=  setInterval(function(){
@@ -19,6 +21,7 @@ import {gameOver,scoreCard} from "./score.js";
         if(i===ranNo){
           para.style.background="black"
           para.textContent = keyMap[i];
+          para.classList.add("black-tile");
         }else{
           para.style.background="white"
         }
@@ -29,16 +32,18 @@ import {gameOver,scoreCard} from "./score.js";
     },gameTime)
   }
 
-// function stopGame(){
-//   
 
-// }
-
+// used for removing child from gameboard.
 function removeChild(sect){
+  let blackTile =  sect.querySelector(".black-tile");
+  let opacityofTile = getComputedStyle(blackTile).opacity;
+  if (opacityofTile ==="1"){
+    gameOver(mygame);
+  }
   sect.remove();
 }
 
-
+// update the score if we click on black tile otherwise game over.
 function CheckBgcolor(event){
   let noOfClasses = event.target.classList;
   let tileColor = getComputedStyle(event.target).backgroundColor;
@@ -48,12 +53,11 @@ function CheckBgcolor(event){
 
     // to mark that it should not be counted again.
     event.target.classList.add('counted');
-    console.log('score',score)
   }
  
 
   else if (tileColor === "rgb(255, 255, 255)"){
-    // alert("game over!")
+    // when we click on white tile -- > game is over.
     gameOver(mygame);
   }
 
