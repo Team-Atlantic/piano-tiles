@@ -1,17 +1,21 @@
 import { score, keyMap, gameTime, updateScore } from "./gameData.js";
 import { gameOver, scoreCard } from "./score.js";
 
+
+import { playSuccessHit, playGameStart } from "./audio.js";
 export const gameBoard = document.querySelector(".game-board");
 let mygame = null;
 
 // called when we click on start on rules div
 export function startGame() {
+
+  playGameStart();
+
   scoreCard();
   mygame = setInterval(function () {
     let sec = document.createElement("section");
     let ranNo = generateRandomNum();
     sec.className = "board-row";
-    
 
     for (let i = 0; i <= 3; i++) {
       let para = document.createElement("p");
@@ -72,6 +76,10 @@ function CheckBgcolor(event) {
   if (tileColor === "rgb(0, 0, 0)" && !noOfClasses.contains("counted")) {
     // score+=1;
     updateScore();
+
+
+    //audio when score updates
+    playSuccessHit();
 
     // to mark that it should not be counted again.
     event.target.classList.add("counted");
