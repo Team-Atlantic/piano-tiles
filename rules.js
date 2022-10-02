@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function beginGame(){
         document.querySelector('.rule').style.display='none';
-        document.querySelector('.showScore').style.display='revert';
         document.querySelector('.game-board').style.display='grid';
+        document.querySelector('.showScore').style.display='revert';
         startGame();
 
     }
