@@ -1,8 +1,8 @@
 
 
-  let score=0;
+ export let score=0;
   
-  const gameTime = 1000;
+ export const gameTime = 1000;
  
   const keyMap = { 0: "A", 1: "S", 2: "D", 3: "F" };
  const gameBoard = document.querySelector(".game-board");
