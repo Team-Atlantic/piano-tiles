@@ -6,9 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Panio Tiles</title>
     <link rel="stylesheet" href="style.css" />
+
+    <script defer>
+      window.load = function () {
+        document.getElementById("loop_game_music").play();
+      };
+
+      function playGameStart() {
+        let playAudio = document.createElement("audio");
+        playAudio.src = "audio/get-ready.wav";
+        playAudio.play();
+      }
+
+
+      function playSuccessHit() {
+        let playAudio = document.createElement("audio");
+        playAudio.src = "audio/success-hit.wav";
+        playAudio.play();
+      }
+
+      function playGameOver() {
+        let playAudio = document.createElement("audio");
+        playAudio.src = "audio/gameover.mp3";
+        playAudio.play();
+      }
+    </script>
   </head>
 
   <body>
+    <audio
+      src="audio/low-soothing.mp3"
+      id="loop_game_music"
+      loop="loop"
+      autoplay="autoplay"
+    ></audio>
     <main>
       <!-- rule -->
       <section class="rule">
@@ -17,19 +48,26 @@
           <h2>How to Play</h2>
         </section>
         <section class="ruleSecondSection">
-          <p>To play this game you have to tap on the black tiles and avoid the white tiles</p>
+          <p>
+            To play this game you have to tap on the black tiles and avoid the
+            white tiles
+          </p>
           <p>When you click on the black tiles your score will increase</p>
-           <p>If you miss the black tile or click on white tiles you will Loss!</p>
+          <p>
+            If you miss the black tile or click on white tiles you will Loss!
+          </p>
           <p>To start playing game click on the start button below</p>
         </section>
-        <section class="rule-third-section"> 
+        <section class="rule-third-section">
           <button class="start-button">Start</button>
         </section>
       </section>
 
       <!-- game borad -->
       <section class="game-board">
-        <section class="showScore">Score:<span class="currentScore"></span></section>
+        <section class="showScore">
+          Score:<span class="currentScore"></span>
+        </section>
       </section>
       <!-- score screen -->
       <section class="score-screen">
@@ -40,7 +78,7 @@
 
           <div class="score-screen-wrapper">
             <p class="score"><span>99</span></p>
-            <p class="best">Best <span>109</span> </p>
+            <p class="best">Best <span>109</span></p>
           </div>
 
           <div class="score-button-wrapper">

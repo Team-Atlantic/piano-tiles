@@ -15,6 +15,7 @@ const scoreBoard = document.querySelector('.score-screen');
 
 // It will be called when the game is over.
 export function gameOver(mygame){
+    playGameOver()
     clearInterval(mygame);
     gameBoard.style.display='none';
     const showScoreHtml=`<section class="showScore">Score:<span class="currentScore">0</span></section>`;
