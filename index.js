@@ -1,14 +1,13 @@
 
+import {score,keyMap,gameTime,updateScore} from './gameData.js'
+import {gameOver} from "./score.js";
 
- export let score=0;
-  
- export const gameTime = 1000;
  
-  const keyMap = { 0: "A", 1: "S", 2: "D", 3: "F" };
- const gameBoard = document.querySelector(".game-board");
+ 
+ export const gameBoard = document.querySelector(".game-board");
     
  export function startGame(){
-    setInterval(function(){
+  const mygame =  setInterval(function(){
       let sec=document.createElement("section");
       let ranNo=generateRandomNum();
       sec.className="board-row";
@@ -29,6 +28,11 @@
     },gameTime)
   }
 
+function stopGame(){
+  clearInterval(mygame);
+
+}
+
 function removeChild(sect){
   sect.remove();
 }
@@ -38,7 +42,9 @@ function CheckBgcolor(event){
   let noOfClasses = event.target.classList;
   let tileColor = getComputedStyle(event.target).backgroundColor;
   if(tileColor==="rgb(0, 0, 0)" && !(noOfClasses.contains('counted'))){
-    score+=1;
+    // score+=1;
+    updateScore();
+
     // to mark that it should not be counted again.
     event.target.classList.add('counted');
     console.log('score',score)
@@ -46,7 +52,8 @@ function CheckBgcolor(event){
  
 
   else if (tileColor === "rgb(255, 255, 255)"){
-    alert("game over!")
+    // alert("game over!")
+    gameOver();
   }
 
 }
