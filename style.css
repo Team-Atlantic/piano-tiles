@@ -152,7 +152,18 @@ font-size: 1.5em;
   height: 100vh;
   width: 50%;
   margin: 0 auto;
+  z-index: 0;
   /* overflow: auto; */
+}
+.showScore{
+  display: none;
+  position: absolute;
+  z-index: 1;
+  font-size: 3em;
+  color:white;
+  left: 45%;
+  top: 2%;
+  background-color: red;
 }
 @media (width<700px){
   .game-board{
