@@ -1,12 +1,14 @@
 `use scrict`;
+import {startGame} from "./index.js";
 document.addEventListener("DOMContentLoaded", function () {
-    let buttons=document.querySelector('.start-button')
-    buttons.addEventListener('click',gameBoard)
+    const startButton=document.querySelector('.start-button');
+    startButton.addEventListener('click',beginGame);
+    console.log(startButton);
 
-    function gameBoard(){
+    function beginGame(){
         document.querySelector('.rule').style.display='none';
-        // console.log()
         document.querySelector('.game-board').style.display='grid';
+        startGame();
 
     }
 

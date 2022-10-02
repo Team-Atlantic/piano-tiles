@@ -1,13 +1,13 @@
-`use scrict`;
-document.addEventListener("DOMContentLoaded", function () {
+
+
   let score=0;
   
   const gameTime = 1000;
  
   const keyMap = { 0: "A", 1: "S", 2: "D", 3: "F" };
-  
-  const gameBoard = document.querySelector(".game-board");
-  function startGame(){
+ const gameBoard = document.querySelector(".game-board");
+    
+ export function startGame(){
     setInterval(function(){
       let sec=document.createElement("section");
       let ranNo=generateRandomNum();
@@ -59,4 +59,4 @@ function CheckBgcolor(event){
   }
 
   
-});
+

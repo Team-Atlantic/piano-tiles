@@ -37,12 +37,12 @@
   font-family: var(--font-family);
 }
 
-.ruleClose{
+/* .ruleClose{
   color: white;
   float: right;
   font-size: 28px;
   font-weight: bold;
-}
+} */
 .ruleFirstSection h2{
   font-size: 200%;
   padding: 0;
