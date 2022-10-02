@@ -1,13 +1,14 @@
 
 import {score,keyMap,gameTime,updateScore} from './gameData.js'
-import {gameOver} from "./score.js";
+import {gameOver,scoreCard} from "./score.js";
 
  
  
  export const gameBoard = document.querySelector(".game-board");
-    
+ let mygame =null
  export function startGame(){
-  const mygame =  setInterval(function(){
+  scoreCard();
+  mygame=  setInterval(function(){
       let sec=document.createElement("section");
       let ranNo=generateRandomNum();
       sec.className="board-row";
@@ -28,10 +29,10 @@ import {gameOver} from "./score.js";
     },gameTime)
   }
 
-function stopGame(){
-  clearInterval(mygame);
+// function stopGame(){
+//   
 
-}
+// }
 
 function removeChild(sect){
   sect.remove();
@@ -53,7 +54,7 @@ function CheckBgcolor(event){
 
   else if (tileColor === "rgb(255, 255, 255)"){
     // alert("game over!")
-    gameOver();
+    gameOver(mygame);
   }
 
 }
