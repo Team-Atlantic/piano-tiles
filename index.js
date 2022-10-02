@@ -1,6 +1,7 @@
 import { score, keyMap, gameTime, updateScore } from "./gameData.js";
 import { gameOver, scoreCard } from "./score.js";
 
+import { playSuccessHit, playGameStart } from "./audio.js";
 export const gameBoard = document.querySelector(".game-board");
 let mygame = null;
 

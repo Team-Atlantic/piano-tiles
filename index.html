@@ -6,31 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Panio Tiles</title>
     <link rel="stylesheet" href="style.css" />
-
-    <script defer>
-      window.load = function () {
-        document.getElementById("loop_game_music").play();
-      };
-
-      function playGameStart() {
-        let playAudio = document.createElement("audio");
-        playAudio.src = "audio/get-ready.wav";
-        playAudio.play();
-      }
-
-
-      function playSuccessHit() {
-        let playAudio = document.createElement("audio");
-        playAudio.src = "audio/success-hit.wav";
-        playAudio.play();
-      }
-
-      function playGameOver() {
-        let playAudio = document.createElement("audio");
-        playAudio.src = "audio/gameover.mp3";
-        playAudio.play();
-      }
-    </script>
   </head>
 
   <body>
@@ -38,7 +13,8 @@
       src="audio/low-soothing.mp3"
       id="loop_game_music"
       loop="loop"
-      autoplay="autoplay"
+      autoplay="true"
+      muted="true"
     ></audio>
     <main>
       <!-- rule -->
@@ -91,5 +67,6 @@
     <script src="rules.js" type="module"></script>
     <script src="score.js" type="module"></script>
     <script src="index.js" type="module"></script>
+    <script src="audio.js" type="module"></script>
   </body>
 </html>
