@@ -27,6 +27,11 @@ export function gameOver(mygame){
 }
 
 // score-exit-btn
+const exitBtn = document.querySelector('.score-exit-btn');
+exitBtn.addEventListener('click',function(){
+    document.querySelector('.rule').style.display='revert';
+    document.querySelector('.score-screen').style.display='none';
+})
 
 const playAgainBtn = document.querySelector('.score-again-btn');
 
@@ -40,3 +45,4 @@ scoreCard();
 scoreBoard.style.display='none';
 startGame();
 });
+
