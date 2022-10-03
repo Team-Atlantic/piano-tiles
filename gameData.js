@@ -21,35 +21,37 @@ export function updateScore() {
 
   if (score > mediumLevel && score < hardLevel) {
     increaseSpeed(mediumLevel);
+   
   } else if (score >= hardLevel) {
     increaseSpeed(hardLevel);
+    
   }
 }
 
 function increaseSpeed(level) {
-  if (level === mediumLevel) {
+  if (level === mediumLevel && gameTime != mediumgameTime) {
     setGameTime(mediumgameTime);
     levelTag.classList.remove("easy");
     levelTag.classList.add("medium");
-    document.querySelector(".showScore").classList.add("flash");
-
-    setTimeout(function () {
-      document.querySelector(".showScore").classList.remove("flash");
-    }, 1000);
     levelTag.textContent = "Medium";
-  } else if (level == hardLevel) {
+    flash();
+  } else if (level == hardLevel && gameTime!=hardgameTime) {
     setGameTime(hardgameTime);
     levelTag.classList.remove("medium");
     levelTag.classList.add("hard");
     levelTag.textContent = "Hard";
+    flash();
+    
+  }
+  clearTimeout(mygame);
+  setTimeout(startTheGame, gameTime);
+}
 
+function flash(){
     document.querySelector(".showScore").classList.add("flash");
     setTimeout(function () {
       document.querySelector(".showScore").classList.remove("flash");
     }, 1000);
-  }
-  clearTimeout(mygame);
-  setTimeout(startTheGame, gameTime);
 }
 
 export function setGameTime(time) {

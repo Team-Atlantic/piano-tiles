@@ -34,6 +34,13 @@ export function gameOver(mygame, errorMsg) {
   document.querySelector(".best span").innerText = prevScore;
   document.querySelector(".error-msg").innerText = errorMsg;
   document.querySelector("footer").style.display = "revert";
+
+  if (level.classList.contains("medium")) {
+    level.classList.remove("medium");
+  }
+  if (level.classList.contains("hard")) {
+    level.classList.remove("hard");
+  }
 }
 
 // score-exit-btn
@@ -55,13 +62,7 @@ playAgainBtn.addEventListener("click", function () {
   scoreBoard.style.display = "none";
   showScore.style.display = "revert";
   // startGame();
-  if (level.classList.contains("medium")) {
-    level.classList.remove("medium");
-  }
-  if (level.classList.contains("hard")) {
-    level.classList.remove("hard");
-  }
-  document.querySelector(".level").classList.add("easy");
+  
 
   setInitalState();
 });
