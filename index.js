@@ -73,7 +73,7 @@ function startTheGame() {
   if (blackTile) {
     let opacityofTile = getComputedStyle(blackTile).opacity;
     if (opacityofTile === "1") {
-      gameOver(mygame);
+      gameOver(mygame,"Missed Black Tile");
       return;
     }
   }
@@ -140,14 +140,14 @@ function checkPressedKey(event) {
       let wrongSelection = allChild[keyCodeMap[event.keyCode]];
       wrongSelection.style.backgroundColor = "red";
       wrongSelection.style.transition = "0.5s ease-in";
-      setTimeout(gameOver, 500, mygame);
+      setTimeout(gameOver, 500, mygame,`Pressed ${pressedKey} instead of ${currentBlackTile.textContent[0]}`);
     }
   }
 }
 
 // update the score if we click on black tile otherwise game over.
 function CheckBgcolor(event) {
-  console.log("click here");
+  
   let noOfClasses = event.target.classList;
   let tileColor = getComputedStyle(event.target).backgroundColor;
   if (tileColor === "rgb(0, 0, 0)" && !noOfClasses.contains("counted")) {
@@ -163,7 +163,7 @@ function CheckBgcolor(event) {
     // when we click on white tile -- > game is over.
     event.target.style.backgroundColor = "red";
     event.target.style.transition = "0.5s ease-in";
-    setTimeout(gameOver, 500, mygame);
+    setTimeout(gameOver, 500, mygame,"Clicked on wrong tile.");
   }
   event.target.parentElement.classList.remove("current");
 }

@@ -451,14 +451,11 @@ footer {
 
 footer > a {
   text-decoration: none;
-  color: #3ca72f;
+  color:rgb(65, 209, 214);
+  font-weight: 600;
 }
 
 footer > a:hover {
-  background-image: linear-gradient(
-    to right,
-    #000000 0%,
-    #434343 51%,
-    #000000 100%
-  );
+  color: var(--text-color);
+  background: linear-gradient(135deg, orange 60%, cyan);
 }

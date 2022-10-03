@@ -21,7 +21,7 @@ const scoreBoard = document.querySelector(".score-screen");
 const showScore = document.querySelector(".showScore");
 
 // It will be called when the game is over.
-export function gameOver(mygame) {
+export function gameOver(mygame,errorMsg) {
   playGameOver();
   // clearInterval(mygame);
   // stop adding or deleting rows in game board.
@@ -37,7 +37,7 @@ export function gameOver(mygame) {
   updatePrevScore(score);
   document.querySelector(".score span").innerText = score;
   document.querySelector(".best span").innerText = prevScore;
-
+  document.querySelector(".error-msg").innerText = errorMsg;
   resetScore();
 }
 
