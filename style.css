@@ -254,7 +254,6 @@ body {
 @media (width < 400px) {
   .rule {
     width: 90%;
-    height: 460px;
   }
   .ruleFirstSection {
     height: 10%;
