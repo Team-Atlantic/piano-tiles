@@ -1,5 +1,5 @@
 `use scrict`;
-import {startGame} from "./index.js";
+import {setInitalState} from "./index.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     const startButton=document.querySelector('.start-button');
@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector('.rule').style.display='none';
         document.querySelector('.game-board').style.display='grid';
         document.querySelector('.showScore').style.display='revert';
-        startGame();
+        // startGame();
+        setInitalState();
 
     }
 
