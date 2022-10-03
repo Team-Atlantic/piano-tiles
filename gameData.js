@@ -8,7 +8,7 @@ export const keyMap = { 0: "A", 1: "S", 2: "D", 3: "F" };
 export const keyCodeMap ={65:0,83:1,68:2,70:3};
 
 const mediumLevel = 10;
-export const mediumgameTime = 700;
+export const mediumgameTime = 500;
 export const easygameTime = 1000;
 export function updateScore(){
     score +=1;

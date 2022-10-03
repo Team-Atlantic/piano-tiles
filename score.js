@@ -57,7 +57,7 @@ playAgainBtn.addEventListener("click", function () {
   
   gameBoard.style.display = "grid";
   document.querySelector(".showScore").style.display = "revert";
-
+  document.querySelector("footer").style.display="none";
   // scoreCard();
   scoreBoard.style.display = "none";
   showScore.style.display = "revert";
