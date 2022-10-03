@@ -12,10 +12,7 @@
     <audio
       src="audio/low-soothing.mp3"
       id="loop_game_music"
-      loop="loop"
-      autoplay="true"
-      muted="true"
-    ></audio>
+      loop="loop"></audio>
     <main>
       <!-- rule -->
       <section class="rule">
@@ -40,10 +37,11 @@
       </section>
 
       <!-- game borad -->
+      <section class="showScore">
+        Score:<span class="currentScore"></span>
+      </section>
       <section class="game-board">
-        <section class="showScore">
-          Score:<span class="currentScore"></span>
-        </section>
+        
       </section>
       <!-- score screen -->
       <section class="score-screen">
@@ -64,9 +62,10 @@
         </div>
       </section>
     </main>
+    <script src="audio.js" type="module"></script>
     <script src="rules.js" type="module"></script>
     <script src="score.js" type="module"></script>
     <script src="index.js" type="module"></script>
-    <script src="audio.js" type="module"></script>
+   
   </body>
 </html>

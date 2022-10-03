@@ -1,17 +1,10 @@
-// window.document.onload = function () {
-//   console.log("loop music");
-//   document.getElementById("loop_game_music").play();
-// };
 
-// export { playGameStart, playSuccessHit, playGameOver };
+const startBtn = document.querySelector('.start-button');
+startBtn.addEventListener('click',function(){
+ 
+  let music = document.querySelector('#loop_game_music');
+  music.play();
 
-window.addEventListener("load", (event) => {
-  setTimeout(function () {
-    console.log("page is fully loaded");
-    const media = document.getElementById("loop_game_music");
-    media.muted = true;
-    media.play();
-  }, 1000);
 });
 
 export function playGameStart() {

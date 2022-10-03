@@ -5,28 +5,35 @@ import {
   updatePrevScore,
   resetScore,
 } from "./gameData.js";
-import { startGame } from "./index.js";
+import { setInitalState } from "./index.js";
 import { playGameOver } from "./audio.js";
 
+let scoreTimer = null;
+let countScore = document.querySelector(".currentScore");
 // update the span currentScore with the score value.
 export function scoreCard() {
-  let countScore = document.querySelector(".currentScore");
-  setInterval(function () {
-    countScore.innerText = score;
-  }, gameTime);
+  countScore.innerText = score;
+  scoreTimer = setTimeout(scoreCard, gameTime);
 }
 
 const gameBoard = document.querySelector(".game-board");
 const scoreBoard = document.querySelector(".score-screen");
+const showScore = document.querySelector(".showScore");
 
 // It will be called when the game is over.
 export function gameOver(mygame) {
   playGameOver();
-  clearInterval(mygame);
+  // clearInterval(mygame);
+  // stop adding or deleting rows in game board.
+  clearTimeout(mygame);
+  //stop updating score
+  clearTimeout(scoreTimer);
   gameBoard.style.display = "none";
-  const showScoreHtml = `<section class="showScore">Score:<span class="currentScore">0</span></section>`;
-  gameBoard.innerHTML = showScoreHtml;
+  // const showScoreHtml = `<section class="showScore">Score:<span class="currentScore">0</span></section>`;
+  // gameBoard.innerHTML = showScoreHtml;
+  gameBoard.innerHTML = "";
   scoreBoard.style.display = "revert";
+  showScore.style.display ="none";
   updatePrevScore(score);
   document.querySelector(".score span").innerText = score;
   document.querySelector(".best span").innerText = prevScore;
@@ -46,7 +53,10 @@ playAgainBtn.addEventListener("click", function () {
   resetScore();
   gameBoard.style.display = "grid";
   document.querySelector(".showScore").style.display = "revert";
-  scoreCard();
+
+  // scoreCard();
   scoreBoard.style.display = "none";
-  startGame();
+  showScore.style.display = "revert";
+  // startGame();
+  setInitalState();
 });
