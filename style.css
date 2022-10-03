@@ -159,6 +159,7 @@ body {
   padding: 1px 16px;
   text-align: center;
   letter-spacing: 2px;
+  border-bottom: 1px solid;
   word-spacing: 10px;
   color: var(--text-color);
   height: 20%;
