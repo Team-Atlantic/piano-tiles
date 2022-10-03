@@ -46,6 +46,7 @@ const exitBtn = document.querySelector(".score-exit-btn");
 exitBtn.addEventListener("click", function () {
   document.querySelector(".rule").style.display = "revert";
   document.querySelector(".score-screen").style.display = "none";
+  document.querySelector("footer").style.display="revert";
 });
 
 const playAgainBtn = document.querySelector(".score-again-btn");
@@ -60,5 +61,6 @@ playAgainBtn.addEventListener("click", function () {
   scoreBoard.style.display = "none";
   showScore.style.display = "revert";
   // startGame();
+  
   setInitalState();
 });

@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".rule").style.display = "none";
     document.querySelector(".game-board").style.display = "grid";
     document.querySelector(".showScore").style.display = "revert";
+    document.querySelector("footer").style.display="none";
     // startGame();
     setInitalState();
   }
