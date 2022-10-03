@@ -324,7 +324,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
-  border: 2px solid blueviolet;
+  border: 1px solid gray;
   text-align: center;
   color: var(--text-color);
 }
