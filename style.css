@@ -15,8 +15,8 @@ body {
   padding: 0px;
   box-sizing: border-box;
 }
-*:focus{
-border: 2px solid red;
+*:focus {
+  border: 2px solid red;
 }
 
 /*animated background*/
@@ -145,7 +145,8 @@ border: 2px solid red;
   /* height: 600px; */
   width: 40%;
   position: absolute;
-  top: 50%;
+  top: -50%;
+  transition: 0.5s ease;
   left: 50%;
   transform: translate(-50%, -50%);
   /* padding: 2rem; */
@@ -245,7 +246,7 @@ border: 2px solid red;
   .ruleFirstSection h2 {
     font-size: 150%;
   }
-  .game-board{
+  .game-board {
     width: 100%;
   }
 }
@@ -285,7 +286,7 @@ border: 2px solid red;
   margin: auto;
   position: relative;
   z-index: 1;
-  margin-top:1rem;
+  margin-top: 1rem;
   /* overflow: auto; */
 }
 .showScore {
@@ -440,9 +441,8 @@ border: 2px solid red;
 }
 /* end of scores css */
 
-
 /* footer */
-footer{
+footer {
   position: absolute;
   bottom: 0px;
   color: var(--text-color);
@@ -450,16 +450,16 @@ footer{
   transform: translate(-50%, -50%);
 }
 
-footer>a{
+footer > a {
   text-decoration: none;
   color: #3ca72f;
 }
 
-footer> a:hover{
+footer > a:hover {
   background-image: linear-gradient(
     to right,
     #000000 0%,
     #434343 51%,
     #000000 100%
-  )
+  );
 }
