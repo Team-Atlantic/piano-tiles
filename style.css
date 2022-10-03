@@ -245,6 +245,9 @@ border: 2px solid red;
   .ruleFirstSection h2 {
     font-size: 150%;
   }
+  .game-board{
+    width: 100%;
+  }
 }
 
 @media (width < 400px) {
@@ -277,17 +280,18 @@ border: 2px solid red;
   /* display: grid; */
   /* grid-template-rows: repeat(4,1fr); */
   /* border: 2px solid rgb(65, 209, 214); */
-  height: 100vh;
+  height: 80vh;
   width: 50%;
-  margin: 0 auto;
+  margin: auto;
   position: relative;
   z-index: 1;
+  margin-top:1rem;
   /* overflow: auto; */
 }
 .showScore {
   display: none;
-  position: absolute;
-  z-index: 1;
+  /* position: absolute;
+  z-index: 0; */
   font-size: 3em;
   color: greenyellow;
   left: 45%;
@@ -298,6 +302,7 @@ border: 2px solid red;
   -webkit-backdrop-filter: blur(1px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+  text-align: center;
 }
 @media (width<700px) {
   .game-board {
@@ -434,3 +439,27 @@ border: 2px solid red;
 @media (width < 450px) {
 }
 /* end of scores css */
+
+
+/* footer */
+footer{
+  position: absolute;
+  bottom: 0px;
+  color: var(--text-color);
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+footer>a{
+  text-decoration: none;
+  color: #3ca72f;
+}
+
+footer> a:hover{
+  background-image: linear-gradient(
+    to right,
+    #000000 0%,
+    #434343 51%,
+    #000000 100%
+  )
+}

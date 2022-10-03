@@ -37,6 +37,8 @@ export function gameOver(mygame) {
   updatePrevScore(score);
   document.querySelector(".score span").innerText = score;
   document.querySelector(".best span").innerText = prevScore;
+
+  resetScore();
 }
 
 // score-exit-btn
@@ -50,7 +52,7 @@ const playAgainBtn = document.querySelector(".score-again-btn");
 
 // It will be called when we click play again.
 playAgainBtn.addEventListener("click", function () {
-  resetScore();
+  
   gameBoard.style.display = "grid";
   document.querySelector(".showScore").style.display = "revert";
 

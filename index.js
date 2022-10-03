@@ -166,12 +166,14 @@ function CheckBgcolor(event) {
 
     // to mark that it should not be counted again. and change its opacity.
     event.target.classList.add("counted");
-  } else {
+    
+  } else if (! noOfClasses.contains("counted")) {
     // when we click on white tile -- > game is over.
     event.target.style.backgroundColor = "red";
     event.target.style.transition = "0.5s ease-in";
     setTimeout(gameOver, 500, mygame);
   }
+  event.target.parentElement.classList.remove("current");
 }
 
 function generateRandomNum() {
