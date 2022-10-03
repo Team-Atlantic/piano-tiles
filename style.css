@@ -411,12 +411,12 @@ body {
 }
 
 @media (width < 400px) {
-  .score-screen {
+  .error-msg {
     font-size: 1rem;
   }
 
   .score-card-game-mode {
-    font-size: 1.2rem;
+    font-size: 0.2rem;
   }
 }
 /* @media (width<800px){ */
@@ -443,7 +443,7 @@ body {
   }
 
   .score-card-game-mode {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
 }
 
