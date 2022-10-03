@@ -285,7 +285,7 @@ border: 2px solid red;
   margin: auto;
   position: relative;
   z-index: 1;
-  margin-top:1.5rem;
+  margin-top:1rem;
   /* overflow: auto; */
 }
 .showScore {
@@ -439,3 +439,27 @@ border: 2px solid red;
 @media (width < 450px) {
 }
 /* end of scores css */
+
+
+/* footer */
+footer{
+  position: absolute;
+  bottom: 0px;
+  color: var(--text-color);
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+footer>a{
+  text-decoration: none;
+  color: #3ca72f;
+}
+
+footer> a:hover{
+  background-image: linear-gradient(
+    to right,
+    #000000 0%,
+    #434343 51%,
+    #000000 100%
+  )
+}
