@@ -154,6 +154,7 @@ function checkPressedKey(event) {
 
 // update the score if we click on black tile otherwise game over.
 function CheckBgcolor(event) {
+  console.log("click here");
   let noOfClasses = event.target.classList;
   let tileColor = getComputedStyle(event.target).backgroundColor;
   if (tileColor === "rgb(0, 0, 0)" && !noOfClasses.contains("counted")) {
