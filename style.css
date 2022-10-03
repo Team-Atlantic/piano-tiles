@@ -6,8 +6,6 @@
   /* --font-family:"Chewy", cursive; */
 }
 
-
-
 body {
   font-family: "Exo", sans-serif;
 }
@@ -313,18 +311,17 @@ body {
   }
 }
 
-.level{
+.level {
   font-size: 1rem;
   font-weight: 700;
 }
-.easy{
-  color:rgb(29, 233, 29);
+.easy {
+  color: rgb(29, 233, 29);
 }
-.medium{
+.medium {
   color: yellow;
-
 }
-.hard{
+.hard {
   color: red;
 }
 .board-row {
@@ -492,3 +489,9 @@ footer > a:hover {
     display: none;
   }
 } */
+
+/* flash  */
+.flash {
+  background: rgb(252, 248, 248);
+  transition: 0.8s ease-in;
+}
