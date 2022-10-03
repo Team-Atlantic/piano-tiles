@@ -471,3 +471,8 @@ footer > a:hover {
   color: var(--text-color);
   background: linear-gradient(135deg, orange 60%, cyan);
 }
+/* @media (width<400px){
+  footer{
+    display: none;
+  }
+} */
