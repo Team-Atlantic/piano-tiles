@@ -10,11 +10,21 @@ export const keyCodeMap ={65:0,83:1,68:2,70:3};
 const mediumLevel = 10;
 export const mediumgameTime = 500;
 export const easygameTime = 1000;
+
+const hardLevel = 20;
+export const hardgameTime = 400;
+
+const levelTag = document.querySelector('.level');
+
 export function updateScore(){
     score +=1;
 
-    if (score>mediumLevel){
+    if (score>mediumLevel && score<hardLevel){
         increaseSpeed(mediumLevel);
+    }
+    else if(score >= hardLevel){
+        increaseSpeed(hardLevel);
+        
     }
    
 }
@@ -23,8 +33,17 @@ function increaseSpeed(level){
     if (level === mediumLevel){
 
         setGameTime(mediumgameTime);
-        clearTimeout(mygame);
+        levelTag.classList.remove('easy');
+        levelTag.classList.add('medium');
+        levelTag.textContent = "Medium";
     }
+    else if(level == hardLevel){
+        setGameTime(hardgameTime);
+        levelTag.classList.remove('medium');
+        levelTag.classList.add('hard');
+        levelTag.textContent = "Hard";
+    }
+    clearTimeout(mygame);
 setTimeout(startTheGame,gameTime);
 }
 

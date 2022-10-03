@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Exo:400,700");
+
 :root {
   --text-color: #fff;
   --border-color: #000;
   /* --font-family:"Chewy", cursive; */
 }
 
-@import url("https://fonts.googleapis.com/css?family=Exo:400,700");
+
 
 body {
   font-family: "Exo", sans-serif;
@@ -311,6 +313,20 @@ body {
   }
 }
 
+.level{
+  font-size: 1rem;
+  font-weight: 700;
+}
+.easy{
+  color:rgb(29, 233, 29);
+}
+.medium{
+  color: yellow;
+
+}
+.hard{
+  color: red;
+}
 .board-row {
   border: 1px solid grey;
   width: 100%;

@@ -14,6 +14,8 @@ import { playSuccessHit, playGameStart } from "./audio.js";
 export const gameBoard = document.querySelector(".game-board");
 export let mygame = null;
 
+const level = document.querySelector('.level');
+
 // It will set the initial board
 export function setInitalState() {
   // update the score
@@ -21,6 +23,9 @@ export function setInitalState() {
   // set score to zero
   resetScore();
   // set easy time
+
+  level.textContent = "Easy"
+  level.classList.add('easy');
   setGameTime(easygameTime);
   const allRows =
     '<section class="board-row"><p class="row"></p><p class="row"></p><p class="row"></p><p class="row"></p></section><section class="board-row"><p class="row"></p><p class="row"></p><p class="row"></p><p class="row"></p></section><section class="board-row "><p class="row"></p><p class="row"></p><p class="row"></p><p class="row"></p></section><section class="board-row start"><p class="row"></p><p class="row"></p><p class="row"></p><p class="row"></p></section>';
