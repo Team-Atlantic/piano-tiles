@@ -38,6 +38,7 @@ export function gameOver(mygame,errorMsg) {
   document.querySelector(".score span").innerText = score;
   document.querySelector(".best span").innerText = prevScore;
   document.querySelector(".error-msg").innerText = errorMsg;
+  document.querySelector("footer").style.display="revert";
   resetScore();
 }
 
@@ -61,6 +62,6 @@ playAgainBtn.addEventListener("click", function () {
   scoreBoard.style.display = "none";
   showScore.style.display = "revert";
   // startGame();
-  
+
   setInitalState();
 });
