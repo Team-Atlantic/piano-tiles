@@ -4,6 +4,9 @@ import {
   gameTime,
   updateScore,
   keyCodeMap,
+  setGameTime,
+  easygameTime,
+  resetScore
 } from "./gameData.js";
 import { gameOver, scoreCard } from "./score.js";
 
@@ -15,7 +18,10 @@ export let mygame = null;
 export function setInitalState() {
   // update the score
   scoreCard();
-
+  // set score to zero
+  resetScore();
+  // set easy time
+  setGameTime(easygameTime);
   const allRows =
     '<section class="board-row"><p class="row"></p><p class="row"></p><p class="row"></p><p class="row"></p></section><section class="board-row"><p class="row"></p><p class="row"></p><p class="row"></p><p class="row"></p></section><section class="board-row "><p class="row"></p><p class="row"></p><p class="row"></p><p class="row"></p></section><section class="board-row start"><p class="row"></p><p class="row"></p><p class="row"></p><p class="row"></p></section>';
 
@@ -55,7 +61,9 @@ export function setInitalState() {
   setTimeout(startTheGame, 500);
 }
 
-function startTheGame() {
+export function startTheGame() {
+
+
   //delete the last row
   let boardRows = document.querySelectorAll(".board-row");
 

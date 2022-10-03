@@ -3,7 +3,7 @@ import {
   prevScore,
   gameTime,
   updatePrevScore,
-  resetScore,
+  
 } from "./gameData.js";
 import { setInitalState } from "./index.js";
 import { playGameOver } from "./audio.js";
@@ -39,7 +39,7 @@ export function gameOver(mygame,errorMsg) {
   document.querySelector(".best span").innerText = prevScore;
   document.querySelector(".error-msg").innerText = errorMsg;
   document.querySelector("footer").style.display="revert";
-  resetScore();
+  
 }
 
 // score-exit-btn
