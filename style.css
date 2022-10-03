@@ -409,6 +409,16 @@ body {
     width: 80%;
   }
 }
+
+@media (width < 400px) {
+  .score-screen {
+    font-size: 1rem;
+  }
+
+  .score-card-game-mode {
+    font-size: 1.2rem;
+  }
+}
 /* @media (width<800px){ */
 /* .rule{
     width: 80%;
@@ -452,7 +462,7 @@ footer {
 
 footer > a {
   text-decoration: none;
-  color:rgb(65, 209, 214);
+  color: rgb(65, 209, 214);
   font-weight: 600;
 }
 
