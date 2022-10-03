@@ -312,7 +312,7 @@ body {
 }
 
 .board-row {
-  border: 2px solid rgb(59, 199, 117);
+  border: 1px solid grey;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
