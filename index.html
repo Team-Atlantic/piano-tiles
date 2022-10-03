@@ -15,26 +15,34 @@
       loop="loop"></audio>
     <main>
       <!-- rule -->
-      <section class="rule">
-        <section class="ruleFirstSection">
-          <!-- <span class="ruleClose">&times;</span> -->
-          <h2>How to Play</h2>
+      <div class="area">
+        <ul class="circles">
+          <!-- for animated background -->
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <section class="rule">
+          <section class="ruleFirstSection">
+            <!-- <span class="ruleClose">&times;</span> -->
+            <h2>How to Play</h2>
+          </section>
+          <section class="ruleSecondSection">
+            <p>Tap on the black tiles and avoid the white tiles</p>
+            <p>Clicking the black tiles will increase score</p>
+            <p>Miss black tile or click White Tiles to Loose!</p>
+          </section>
+          <section class="rule-third-section">
+            <button class="start-button">Start</button>
+          </section>
         </section>
-        <section class="ruleSecondSection">
-          <p>
-            To play this game you have to tap on the black tiles and avoid the
-            white tiles
-          </p>
-          <p>When you click on the black tiles your score will increase</p>
-          <p>
-            If you miss the black tile or click on white tiles you will Loss!
-          </p>
-          <p>To start playing game click on the start button below</p>
-        </section>
-        <section class="rule-third-section">
-          <button class="start-button">Start</button>
-        </section>
-      </section>
 
       <!-- game borad -->
       <section class="showScore">
@@ -48,19 +56,20 @@
         <div class="score-card">
           <p class="score-card-text">Piano tiles (Don't tap the white tile)</p>
 
-          <h2 class="score-card-game-mode">Arcade Mode</h2>
+            <h2 class="score-card-game-mode">Arcade Mode</h2>
 
-          <div class="score-screen-wrapper">
-            <p class="score"><span>99</span></p>
-            <p class="best">Best <span>109</span></p>
-          </div>
+            <div class="score-screen-wrapper">
+              <p class="score"><span>99</span></p>
+              <p class="best">Best <span>109</span></p>
+            </div>
 
-          <div class="score-button-wrapper">
-            <button class="score-exit-btn score-btn">Exit</button>
-            <button class="score-again-btn score-btn">Again</button>
+            <div class="score-button-wrapper">
+              <button class="score-exit-btn score-btn">Exit</button>
+              <button class="score-again-btn score-btn">Again</button>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
     <script src="audio.js" type="module"></script>
     <script src="rules.js" type="module"></script>
