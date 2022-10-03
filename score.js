@@ -3,7 +3,7 @@ import {
   prevScore,
   gameTime,
   updatePrevScore,
-  resetScore,
+  
 } from "./gameData.js";
 import { setInitalState } from "./index.js";
 import { playGameOver } from "./audio.js";
@@ -21,7 +21,7 @@ const scoreBoard = document.querySelector(".score-screen");
 const showScore = document.querySelector(".showScore");
 
 // It will be called when the game is over.
-export function gameOver(mygame) {
+export function gameOver(mygame,errorMsg) {
   playGameOver();
   // clearInterval(mygame);
   // stop adding or deleting rows in game board.
@@ -37,8 +37,9 @@ export function gameOver(mygame) {
   updatePrevScore(score);
   document.querySelector(".score span").innerText = score;
   document.querySelector(".best span").innerText = prevScore;
-
-  resetScore();
+  document.querySelector(".error-msg").innerText = errorMsg;
+  document.querySelector("footer").style.display="revert";
+  
 }
 
 // score-exit-btn
@@ -46,6 +47,7 @@ const exitBtn = document.querySelector(".score-exit-btn");
 exitBtn.addEventListener("click", function () {
   document.querySelector(".rule").style.display = "revert";
   document.querySelector(".score-screen").style.display = "none";
+  document.querySelector("footer").style.display="revert";
 });
 
 const playAgainBtn = document.querySelector(".score-again-btn");
@@ -55,10 +57,11 @@ playAgainBtn.addEventListener("click", function () {
   
   gameBoard.style.display = "grid";
   document.querySelector(".showScore").style.display = "revert";
-
+  document.querySelector("footer").style.display="none";
   // scoreCard();
   scoreBoard.style.display = "none";
   showScore.style.display = "revert";
   // startGame();
+
   setInitalState();
 });

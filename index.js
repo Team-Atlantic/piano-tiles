@@ -4,6 +4,9 @@ import {
   gameTime,
   updateScore,
   keyCodeMap,
+  setGameTime,
+  easygameTime,
+  resetScore
 } from "./gameData.js";
 import { gameOver, scoreCard } from "./score.js";
 
@@ -11,11 +14,19 @@ import { playSuccessHit, playGameStart } from "./audio.js";
 export const gameBoard = document.querySelector(".game-board");
 export let mygame = null;
 
+const level = document.querySelector('.level');
+
 // It will set the initial board
 export function setInitalState() {
   // update the score
   scoreCard();
+  // set score to zero
+  resetScore();
+  // set easy time
 
+  level.textContent = "Easy"
+  level.classList.add('easy');
+  setGameTime(easygameTime);
   const allRows =
     '<section class="board-row"><p class="row"></p><p class="row"></p><p class="row"></p><p class="row"></p></section><section class="board-row"><p class="row"></p><p class="row"></p><p class="row"></p><p class="row"></p></section><section class="board-row "><p class="row"></p><p class="row"></p><p class="row"></p><p class="row"></p></section><section class="board-row start"><p class="row"></p><p class="row"></p><p class="row"></p><p class="row"></p></section>';
 
@@ -55,16 +66,16 @@ export function setInitalState() {
   setTimeout(startTheGame, 500);
 }
 
+export function startTheGame() {
 
 
-function startTheGame() {
   //delete the last row
   let boardRows = document.querySelectorAll(".board-row");
 
   let AllBoradRow = [...boardRows];
- 
+
   let removeNode = AllBoradRow.pop();
- 
+
   // to handle the last setTimeout when the board becomes empty.
   if (!removeNode) {
     return;
@@ -75,7 +86,7 @@ function startTheGame() {
   if (blackTile) {
     let opacityofTile = getComputedStyle(blackTile).opacity;
     if (opacityofTile === "1") {
-      gameOver(mygame);
+      gameOver(mygame,"Missed Black Tile");
       return;
     }
   }
@@ -110,12 +121,9 @@ function startTheGame() {
   }
 
   gameBoard.prepend(sec);
- 
 
   mygame = setTimeout(startTheGame, gameTime);
 }
-
-
 
 document.addEventListener("keydown", checkPressedKey);
 
@@ -143,18 +151,16 @@ function checkPressedKey(event) {
       currentRow.classList.remove("current");
     } else {
       let wrongSelection = allChild[keyCodeMap[event.keyCode]];
-     
-      wrongSelection.backgroundColor = "red";
-      wrongSelection.transition = "0.5s ease-in";
-      setTimeout(gameOver, 500, mygame);
+      wrongSelection.style.backgroundColor = "red";
+      wrongSelection.style.transition = "0.5s ease-in";
+      setTimeout(gameOver, 500, mygame,`Pressed ${pressedKey} instead of ${currentBlackTile.textContent[0]}`);
     }
   }
 }
 
-
 // update the score if we click on black tile otherwise game over.
 function CheckBgcolor(event) {
-  console.log("click here");
+  
   let noOfClasses = event.target.classList;
   let tileColor = getComputedStyle(event.target).backgroundColor;
   if (tileColor === "rgb(0, 0, 0)" && !noOfClasses.contains("counted")) {
@@ -166,12 +172,11 @@ function CheckBgcolor(event) {
 
     // to mark that it should not be counted again. and change its opacity.
     event.target.classList.add("counted");
-    
-  } else if (! noOfClasses.contains("counted")) {
+  } else if (!noOfClasses.contains("counted")) {
     // when we click on white tile -- > game is over.
     event.target.style.backgroundColor = "red";
     event.target.style.transition = "0.5s ease-in";
-    setTimeout(gameOver, 500, mygame);
+    setTimeout(gameOver, 500, mygame,"Clicked on wrong tile.");
   }
   event.target.parentElement.classList.remove("current");
 }
