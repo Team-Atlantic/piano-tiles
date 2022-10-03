@@ -55,16 +55,14 @@ export function setInitalState() {
   setTimeout(startTheGame, 500);
 }
 
-
-
 function startTheGame() {
   //delete the last row
   let boardRows = document.querySelectorAll(".board-row");
 
   let AllBoradRow = [...boardRows];
- 
+
   let removeNode = AllBoradRow.pop();
- 
+
   // to handle the last setTimeout when the board becomes empty.
   if (!removeNode) {
     return;
@@ -110,12 +108,9 @@ function startTheGame() {
   }
 
   gameBoard.prepend(sec);
- 
 
   mygame = setTimeout(startTheGame, gameTime);
 }
-
-
 
 document.addEventListener("keydown", checkPressedKey);
 
@@ -143,14 +138,12 @@ function checkPressedKey(event) {
       currentRow.classList.remove("current");
     } else {
       let wrongSelection = allChild[keyCodeMap[event.keyCode]];
-     
-      wrongSelection.backgroundColor = "red";
-      wrongSelection.transition = "0.5s ease-in";
+      wrongSelection.style.backgroundColor = "red";
+      wrongSelection.style.transition = "0.5s ease-in";
       setTimeout(gameOver, 500, mygame);
     }
   }
 }
-
 
 // update the score if we click on black tile otherwise game over.
 function CheckBgcolor(event) {
@@ -166,8 +159,7 @@ function CheckBgcolor(event) {
 
     // to mark that it should not be counted again. and change its opacity.
     event.target.classList.add("counted");
-    
-  } else if (! noOfClasses.contains("counted")) {
+  } else if (!noOfClasses.contains("counted")) {
     // when we click on white tile -- > game is over.
     event.target.style.backgroundColor = "red";
     event.target.style.transition = "0.5s ease-in";
